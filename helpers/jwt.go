@@ -16,7 +16,7 @@ func GenerateToken(id uint, email string) string {
 		"email": email,
 	}
 
-	parseToken := jwt.NewWithClaims(jwt.SigningMethodES256, claims)
+	parseToken := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 
 	signedToken, _ := parseToken.SignedString([]byte(secretKey))
 
